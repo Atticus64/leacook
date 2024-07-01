@@ -1,5 +1,5 @@
-#include "basics/celsius.h"
+#include "app/app.h"
 
 int main() {
-	calc_celsius();
+  start();
 }
