@@ -1,7 +1,5 @@
 #include "basics/celsius.h"
 
-int main(){
+int main() {
 	calc_celsius();
-	
 }
-
