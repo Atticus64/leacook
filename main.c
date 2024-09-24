@@ -1,5 +1,7 @@
-#include "app/app.h"
+#include "basics/hex.h"
 
 int main() {
-  start();
+	hex_app();
+    return 0;
 }
+

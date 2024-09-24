@@ -1,7 +1,7 @@
 TARGET  =  learnc
-DEPS  	=  basics/*.c app/*.c
+DEPS  	=  basics/*.c 
 MAIN    =  main.c 
-CXX    ?=  gcc
+CXX     =  gcc
 
 
 $(TARGET):  $(DEPS)
