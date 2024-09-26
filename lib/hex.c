@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int upper(int c) {
+int lower(int c) {
 
     if ( c >= 'A' || c <= 'Z') {
         return c - 32;
@@ -15,7 +15,7 @@ int val_hxchar(char arg) {
         return arg - '0';
     }
 
-    arg = upper(arg);
+    arg = lower(arg);
 
     switch(arg) {
         case 'A':
@@ -49,17 +49,17 @@ int from_hex(char hex[]) {
     return val;
 }
 
-int hex_app() {
 
+int hex_app() {
     char hex[40] = "";
 
-    printf("Valor en hex > ");
+    printf("Enter an input: ");
     if (fgets(hex, 40, stdin))
     {
-        printf("hex -> %s", hex);
+        printf("hex val %s", hex);
         printf("int value -> %d\n", from_hex(hex));
     }
 
-	return 0;
-}
 
+    return 0;
+}
