@@ -11,6 +11,7 @@ LIB_FLAGS:=
 
 CC_FLAGS:=-c -I./
 LD_FLAGS:=$(LIB_FLAGS)
+TEST_FLAGS:=-lcunit
 
 LIB_SRC:=$(wildcard lib/*.c)
 CORE_SRC:=$(wildcard src/*.c)
@@ -46,7 +47,7 @@ release: $(LIB_OBJ) $(CORE_OBJ)
 
 test: $(LIB_OBJ) $(TEST_OBJ)					
 	$(SILENT) printf "LD obj/lib.*.o obj/test.*.o\n"	
-	$(SILENT) $(CC) -lcunit $(LD_FLAGS) $(LIB_OBJ) $(TEST_OBJ) -o $(PROJECT)-test
+	$(SILENT) $(CC) $(TEST_FLAGS) $(LD_FLAGS) $(LIB_OBJ) $(TEST_OBJ) -o $(PROJECT)-test
 
 obj/lib.%.c.o: lib/%.c
 	$(SILENT) printf "CC $@\n"
