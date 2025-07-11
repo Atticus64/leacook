@@ -47,6 +47,62 @@ void delete_node(node_t *root, int value) {
 
 }
 
+int* list_get_items(list_t *list) {
+	int* items = malloc(list->count * sizeof(int));
+	node_t *curr = list->head;
+	node_t *head = list->head;
+	int i = 0;
+	while (true) {
+		items[i] = curr->value;
+		curr = curr->next;
+		if (curr == head)
+			break;
+
+		i += 1;
+	}
+
+	return items;
+}
+
+int list_exist_elem(list_t *list, int elem) {
+	node_t *curr = list->head;
+	node_t *head = list->head;
+	int i = 1;
+	while (true) {
+		if (curr->value == elem) {
+			return true;
+		}
+		curr = curr->next;
+		if (curr == head)
+			break;
+		i++;
+	}
+	
+	return false;
+}
+
+int list_get_elem(list_t *list, int index) {
+
+	if (index > list->count + 1) 
+		return -1;
+
+	node_t *curr = list->head;
+	node_t *head = list->head;
+
+	int i = 1;
+	while (true) {
+		if (i == index) {
+			return curr->value;
+		}
+		curr = curr->next;
+		if (curr == head)
+			break;
+		i++;
+	}
+	
+
+}
+
 void add_end(node_t* init, node_t* new_node) {
 	if (init == NULL || new_node == NULL) 
 		return;

@@ -23,6 +23,12 @@ void list_delete_node(list_t* list, int value);
 
 void list_log(list_t *list);
 
+int* list_get_items(list_t *list);
+
+int list_exist_elem(list_t *list, int elem);
+
+int list_get_elem(list_t *list, int index);
+
 void add_node(node_t *n1, node_t *n2);
 
 void add_end(node_t* init, node_t* new_node);
