@@ -1,28 +1,24 @@
-#include "../lib/circular.h"
-#include <stdlib.h>
+#include "../lib/tree.h"
+// #include <stdlib.h>
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-	list_t* cl = new_list();
-	list_insert_node(cl, 55);
-	list_insert_node(cl, 24);
-	list_insert_node(cl, 67);
-	list_insert_node(cl, 101);
-	list_log(cl); 
-	list_delete_node(cl, 67);
-	list_log(cl); 
-	list_search(cl, 77);
-	list_insert_node(cl, 88);
-	list_log(cl); 
-	list_search(cl, 101);
-	int* items = list_get_items(cl);
-	for (int i = 0; i < cl->count; i++) {
-		printf("%d ", items[i]);
-	}
-	printf("\n");
+	tree_t* t = tree_new(18);
 
-	del_list(cl);
-	free(items);
-	
+	tree_add_node(t, 9);
+	tree_add_node(t, 30);
+	tree_add_node(t, 7);
+	tree_add_node(t, 40);
+	tree_add_node(t, 22);
+	tree_add_node(t, 15);
+
+	printf("root value: %d\n", t->root->value);
+	tree_preorder(t);
+	tree_inorder(t);
+
+	tree_print(t);
+	tree_delete(t);
+
+
 	return 0;
 }
