@@ -5,9 +5,9 @@ PROJECT:=learnc
 
 CC:=gcc
 
-GDB_FLAGS:=-Og -ggdb
+GDB_FLAGS:=-Wall -Wextra -Werror -Og -ggdb
 OPT_FLAGS:=-O2 -march=native
-LIB_FLAGS:=
+LIB_FLAGS:=-Wall -Wextra -Werror  
 
 CC_FLAGS:=-c -I./
 LD_FLAGS:=$(LIB_FLAGS)
@@ -38,6 +38,7 @@ clean:
 debug: CC_FLAGS+=$(GDB_FLAGS)
 debug: $(LIB_OBJ) $(CORE_OBJ)
 	$(SILENT) printf "LD obj/lib.*.o obj/src.*.o\n"
+	$(SILENT) printf "usando las flags" $(LD_FLAGS)
 	$(SILENT) $(CC) $(LD_FLAGS) $(LIB_OBJ) $(CORE_OBJ) -o $(PROJECT)
 
 release: CC_FLAGS+=$(OPT_FLAGS)					
