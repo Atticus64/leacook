@@ -60,7 +60,7 @@ int is_letter(char c) {
 int from_hex(char hex[]) {
     int val = 0;
 
-    for (int i = 0; hex[i] >= '0' && hex[i] <= '9' || is_letter(hex[i]) ; ++i)  {
+    for (int i = 0; (hex[i] >= '0' && hex[i] <= '9') || is_letter(hex[i]); ++i)  {
         val = val * 16 + (val_hxchar(hex[i]));
     }
 

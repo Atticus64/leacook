@@ -1,8 +1,8 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-#include "test_hex.h"
-#include "test_array.h"
-#include "test_tree.h"
+#include "utils/test_hex.h"
+#include "ds/test_array.h"
+#include "ds/test_tree.h"
 
 int main(void) {
     if (CUE_SUCCESS != CU_initialize_registry())

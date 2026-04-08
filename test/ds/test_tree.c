@@ -1,5 +1,5 @@
 #include <CUnit/CUnit.h>
-#include "../lib/tree.h"
+#include "../../lib/ds/tree.h"
 #include "test_tree.h"
 
 void test_tree_new(void) {

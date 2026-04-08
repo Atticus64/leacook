@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../lib/array.h" 
+#include "../lib/ds/array.h" 
 
 int main() {
 

@@ -1,5 +1,5 @@
 #include <CUnit/CUnit.h>
-#include "../lib/hex.h"
+#include "../../lib/utils/hex.h"
 #include "test_hex.h"
 
 void test_val_hxchar(void) {

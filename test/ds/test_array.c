@@ -1,5 +1,5 @@
 #include <CUnit/CUnit.h>
-#include "../lib/array.h"
+#include "../../lib/ds/array.h"
 #include "test_array.h"
 
 void test_new_array_valid(void) {

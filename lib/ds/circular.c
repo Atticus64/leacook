@@ -100,7 +100,7 @@ int list_get_elem(list_t *list, int index) {
 		i++;
 	}
 	
-
+	return -1;
 }
 
 void add_end(node_t* init, node_t* new_node) {

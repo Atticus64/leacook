@@ -10,7 +10,6 @@ int len(char* str) {
 
 void cat(char* str1, char* str2) {
 	int val_len = len(str1);
-	int i = 0;
 	str1 += val_len;
 
 	while (*str2 != '\0') {

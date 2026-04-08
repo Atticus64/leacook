@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../ds/stack.h"
 
 typedef enum {
 	L_PAREN,
