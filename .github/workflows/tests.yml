@@ -1,0 +1,42 @@
+# .github/workflows/tests.yml
+name: CUnit Tests
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: sudo apt-get update && sudo apt-get install -y libcunit1-dev valgrind
+
+      - name: Crear directorio obj/
+        run: mkdir -p obj
+
+      - name: Compilar tests
+        run: make test
+
+      - name: Correr CUnit
+        run: ./learnc-test
+
+      - name: Correr Valgrind
+        run: |
+          valgrind \
+            --leak-check=full \
+            --show-leak-kinds=all \
+            --track-origins=yes \
+            --error-exitcode=1 \
+            --log-file=valgrind.log \
+            ./learnc-test
+
+      - name: Mostrar reporte Valgrind
+        if: always()
+        run: cat valgrind.log
