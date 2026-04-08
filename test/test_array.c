@@ -11,7 +11,7 @@ void test_new_array_valid(void) {
 }
 
 void test_new_array_invalid(void) {
-    Nums* list = new_array(3);
+    Nums* list = new_array(0);
     CU_ASSERT_PTR_NULL(list);
 }
 
