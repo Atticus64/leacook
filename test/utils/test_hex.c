@@ -3,7 +3,7 @@
 #include "test_hex.h"
 
 void test_val_hxchar(void) {
-    CU_ASSERT(val_hxchar('a') == 11);
+    CU_ASSERT(val_hxchar('a') == 10);
     CU_ASSERT(val_hxchar('f') == 15);
     CU_ASSERT(val_hxchar('4') == 4);
 }
