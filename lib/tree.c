@@ -9,6 +9,9 @@ tree_t* tree_new(int init_value) {
 	new_tree->root = malloc(sizeof(tree_node_t));
 
 	new_tree->root->value = init_value;
+	new_tree->root->left = NULL;
+	new_tree->root->right = NULL;
+	new_tree->items = 1;
 
 	return new_tree;
 }
@@ -18,6 +21,8 @@ void tree_add_node(tree_t *tree, int new_value) {
 	tree_node_t* root = tree->root;
 	tree_node_t* new_node = malloc(sizeof(tree_node_t));
 	new_node->value = new_value;
+	new_node->left = NULL;
+	new_node->right = NULL;
 	tree->items += 1;
 
 	while (root != NULL) {

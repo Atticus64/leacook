@@ -5,6 +5,7 @@ Nums* new_array(size_t capacity) {
 	Nums* list = malloc(sizeof(Nums));
 	if (capacity < 1) {
 		printf("Error al crear array con capacidad %zu\n", capacity);
+		free(list);
 		return NULL;
 	}
 	list->capacity = capacity;
