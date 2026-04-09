@@ -6,17 +6,19 @@ int main() {
 	Nums* list = new_array(10);
 	stack_t* st = create_stack();
 
-	for (int i = 33; i <= 43; ++i) {
+	for (int i = 38; i <= 43; ++i) {
 		array_append(i, list);
 		// pushing ascii chars of int value i 
 		push(st, i);
 	}
 
-	printf("stack -> ");
 	show_stack(st);
 	char top = peek(st);
 	printf("peeked %c\n", top);
-	
+	for (int x = 0; x < 3; ++x) pop(st);
+	show_stack(st);
+	printf("empty? %s\n", empty_stack(st) ? "true" : "false");
+
 	printf("list -> ");
 	show_array(list);
 	printf("Pointer -> %p\n", list->items);

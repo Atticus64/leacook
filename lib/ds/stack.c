@@ -30,11 +30,14 @@ char pop(stack_t* stack) {
 
 	stack->top = new_top;
 	char value = curr->value;
-	printf("poped %c\n", value);
+	printf("removed %c\n", value);
 	free(curr);
 	return value;
 }
 
+int empty_stack(stack_t* stack) {
+	return stack->count <= 0;
+}
 
 void automaton_push(stack_t* stack, char elem) {
 	elem_t* new_elem = malloc(sizeof(elem_t));
@@ -91,7 +94,7 @@ void show_stack(stack_t* stack) {
 
 	elem_t* curr = stack->top;
 
-	printf("{ ");
+	printf("stack -> { ");
 	while(curr->next != NULL) {
 		if (curr->next->next == NULL) {
 			printf("%c ", curr->value);
