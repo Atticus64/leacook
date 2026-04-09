@@ -54,16 +54,16 @@ void check_program(char* input, stack_t* st) {
 		t_type t_lex = check_lexema(ch);
 
 		if (t_lex == L_PAREN) {
-			push(st, '1');
+			automaton_push(st, '1');
 		} else if (t_lex == R_PAREN) {
-			pop(st, '1', i);
+			automaton_pop(st, '1', i);
 		}
 		printf("c => %c [%s]\n", ch, lexema_str(t_lex));
 		i++;
 		ch = input[i];
 	}
 
-	pop(st, 'Z', i);
+	automaton_pop(st, 'Z', i);
 
 }
 

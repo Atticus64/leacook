@@ -18,6 +18,9 @@ void push(stack_t* stack, char elem);
 char peek(stack_t* stack);
 char pop(stack_t* stack);
 
+void automaton_pop(stack_t* stack, char elem, int position);
+void automaton_push(stack_t* stack, char elem);
+
 void show_stack(stack_t* stack);
 
 void del_stack(stack_t* stack);
