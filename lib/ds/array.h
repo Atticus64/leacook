@@ -10,6 +10,8 @@ typedef struct {
 
 Nums* new_array(size_t capacity);
 
+void show_array(Nums* list);
+
 void array_append(int num, Nums* list);
 
 void del_array(Nums* list);

@@ -21,6 +21,18 @@ Nums* new_array(size_t capacity) {
 	return list;
 }
 
+
+void show_array(Nums* list) {
+	printf("[ ");
+	for (size_t x = 0; x < list->count; ++x) {
+		if (x == list->count - 1) {
+			printf("%d ]\n", list->items[x]);
+		} else {
+			printf("%d, ", list->items[x]);
+		}
+	}
+}
+
 void array_append(int num, Nums* list) {
 
 	if (list->count >= list->capacity) {
