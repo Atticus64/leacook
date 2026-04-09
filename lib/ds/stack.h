@@ -8,10 +8,16 @@ typedef struct Elem {
 
 typedef struct Stack {
 	int count;
-	elem_t* bottom;
+	elem_t* top;
 } stack_t;
 
 
-stack_t* create_st();
+stack_t* create_stack();
+
 void push(stack_t* stack, char elem);
-void pop(stack_t* stack, char elem, int position);
+char peek(stack_t* stack);
+char pop(stack_t* stack);
+
+void show_stack(stack_t* stack);
+
+void del_stack(stack_t* stack);
