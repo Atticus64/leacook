@@ -3,7 +3,6 @@
 #include "../lib/ds/stack.h" 
 
 int main() {
-
 	Nums* list = new_array(10);
 	stack_t* st = create_stack();
 
@@ -24,7 +23,6 @@ int main() {
 	printf("value -> %d\n", list->items[30]);
 	printf("Count -> %zu\n", list->count);
 	printf("Capacity -> %zu\n", list->capacity);
-	
 	del_array(list);
 	del_stack(st);
 	return 0;
