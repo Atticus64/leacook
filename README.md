@@ -40,7 +40,7 @@ The examples are included as library functions. To use them, include the header 
 ### Celsius Table (K&R)
 
 ```c
-#include "lib/examples/celsius.h"
+#include "../lib/examples/celsius.h"
 
 int main() {
     calc_celsius();
@@ -51,7 +51,7 @@ int main() {
 ### Fibonacci
 
 ```c
-#include "lib/examples/fibo.h"
+#include "../lib/examples/fibo.h"
 #include <stdio.h>
 
 int main() {
@@ -66,7 +66,7 @@ int main() {
 **Dynamic Array**
 
 ```c
-#include "lib/ds/array.h"
+#include "../lib/ds/array.h"
 
 int main() {
     Nums* arr = new_array(5);
@@ -82,7 +82,7 @@ int main() {
 **Stack (LIFO)**
 
 ```c
-#include "lib/ds/stack.h"
+#include "../lib/ds/stack.h"
 
 int main() {
     stack_t* st = create_stack();
@@ -100,7 +100,7 @@ int main() {
 **Binary Search Tree**
 
 ```c
-#include "lib/ds/tree.h"
+#include "../lib/ds/tree.h"
 
 int main() {
     tree_t* tree = tree_new(50);
@@ -120,7 +120,7 @@ int main() {
 **Circular Linked List**
 
 ```c
-#include "lib/ds/circular.h"
+#include "../lib/ds/circular.h"
 
 int main() {
     list_t* list = new_list();
@@ -140,7 +140,7 @@ int main() {
 **Hex Conversion**
 
 ```c
-#include "lib/utils/hex.h"
+#include "../lib/utils/hex.h"
 #include <stdio.h>
 
 int main() {
@@ -155,7 +155,7 @@ int main() {
 **String Operations**
 
 ```c
-#include "lib/utils/str.h"
+#include "../lib/utils/str.h"
 #include <stdio.h>
 
 int main() {
@@ -172,12 +172,11 @@ int main() {
 **Parenthesis Validation**
 
 ```c
-#include "lib/lang/lexer.h"
-#include "lib/ds/stack.h"
+#include "../lib/lang/lexer.h"
 
 int main() {
     stack_t* st = create_stack();
-    check_program(st, "(a + (b - c))");
+    check_program("(a + (b - c))", st);
     // Output:
     // c => ( [L_PAREN]
     // c => a [SYMBOL]
@@ -192,7 +191,7 @@ int main() {
 **Token Classification**
 
 ```c
-#include "lib/lang/lexer.h"
+#include "../lib/lang/lexer.h"
 #include <stdio.h>
 
 int main() {
@@ -200,6 +199,7 @@ int main() {
     t_type t2 = check_lexema('+');  // PLUS
     t_type t3 = check_lexema('5');  // INT
     t_type t4 = check_lexema('x');  // SYMBOL
+    printf("t1 == L_PAREN ? %s", t1 == L_PAREN ? "true" : "false");
     return 0;
 }
 ```
