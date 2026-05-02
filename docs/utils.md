@@ -96,7 +96,7 @@ Manual implementations of common string operations.
 ```mermaid
 flowchart TD
     subgraph "len(str)"
-        A1["i = 0"] --> A2["str[i] != '\\0'?"}
+        A1["i = 0"] --> A2["str[i] != '\\0'?"]
         A2 -->|Yes| A3["i++"]
         A3 --> A2
         A2 -->|No| A4["return i"]
