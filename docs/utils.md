@@ -104,7 +104,7 @@ flowchart TD
 
     subgraph "cat(str1, str2)"
         B1["val_len = len(str1)"] --> B2["str1 += val_len"]
-        B2 --> B3["*str2 != '\\0'?"}
+        B2 --> B3["*str2 != '\\0'?"]
         B3 -->|Yes| B4["*str1 = *str2"]
         B4 --> B5["str1++, str2++"]
         B5 --> B3
