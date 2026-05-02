@@ -1,6 +1,6 @@
 # Learning C notes
 
-Repository with notes and examples of reasearch of C programming language,
+Repository with notes and examples of research of C programming language,
 including notes of the C book
 
 Puedes ver la documentacion del proyecto 
